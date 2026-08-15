@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abhiram Busani | Abhi13-coder | Engineering Portfolio</title>
+<meta name="description" content="Interactive engineering portfolio of Abhiram Busani (Abhi13-coder) — Android systems tooling, native rendering engines, distributed-robotics architecture, and AI-assisted development, backed by public GitHub repositories." />
+<meta name="google-site-verification" content="LJfsz1knodxoGsdX4t6Euj8vUv04n0KpjUYVJfWJ74k" />
+ <meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://abhi13-coder.github.io/Portfolio-/" />
+
+<!-- Favicon: inline SVG, no extra asset needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314171a'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23e8a248'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%2363d2c9' stroke-width='2' opacity='.55'/%3E%3Ccircle cx='54' cy='32' r='3' fill='%239a8cff'/%3E%3C/svg%3E" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://abhi13-coder.github.io/Portfolio-/" />
+<meta property="og:title" content="Abhiram Busani | Abhi13-coder | Engineering Portfolio" />
+<meta property="og:description" content="Interactive engineering portfolio of Abhiram Busani (Abhi13-coder) — Android systems tooling, native rendering engines, distributed-robotics architecture, and AI-assisted development, backed by public GitHub repositories." />
+<meta property="og:image" content="https://abhi13-coder.github.io/Portfolio-/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Abhiram Busani | Abhi13-coder | Engineering Portfolio" />
+<meta name="twitter:description" content="Interactive engineering portfolio of Abhiram Busani (Abhi13-coder) — Android systems, rendering engines, robotics architecture, and AI-assisted development." />
+<meta name="twitter:image" content="https://abhi13-coder.github.io/Portfolio-/og-image.png" />
+
+<!-- Structured data: Person + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhiram Busani",
+  "alternateName": ["Abhi", "Abhi13-coder"],
+  "url": "https://abhi13-coder.github.io/Portfolio-/",
+  "sameAs": [
+    "https://github.com/Abhi13-coder",
+    "https://in.linkedin.com/in/abhi-busani-a1a56b426"
+  ],
+  "jobTitle": "B.Tech CSE Student / Independent Builder",
+  "knowsAbout": ["Android development", "Systems tooling", "Native rendering engines", "Distributed robotics architecture", "AI-assisted development"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Abhi — Build Map",
+  "url": "https://abhi13-coder.github.io/Portfolio-/",
+  "author": { "@type": "Person", "name": "Abhiram Busani" },
+  "description": "Interactive engineering portfolio and build map of Abhiram Busani (Abhi13-coder)."
+}
+</script> 
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg:#14171a;
+    --panel:#1b1f24;
+    --panel-2:#21262c;
+    --line:rgba(231,228,220,.09);
+    --text:#e7e4dc;
+    --text-dim:#9aa0a6;
+    --cyan:#63d2c9;
+    --violet:#9a8cff;
+    --amber:#e8a248;
+    --danger:#e0664f;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  ::selection{background:var(--cyan);color:#0c0e10;}
+
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 20px;
+    background:linear-gradient(to bottom, rgba(20,23,26,.92), rgba(20,23,26,0));
+    backdrop-filter:blur(6px);
+  }
+  .nav .brand{font-weight:700; letter-spacing:.02em; font-size:15px;}
+  .nav .brand span{color:var(--cyan);}
+  .nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--text-dim); text-decoration:none; transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-links{display:none;}
+  @media(min-width:860px){ .nav-links{display:flex;} }
+  .cmdk-btn{
+    display:flex; align-items:center; gap:8px;
+    background:var(--panel); border:1px solid var(--line); color:var(--text-dim);
+    padding:8px 12px; border-radius:8px; font-size:12px; cursor:pointer;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .cmdk-btn kbd{background:var(--panel-2); padding:1px 5px; border-radius:4px; font-size:10.5px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100svh; display:flex; flex-direction:column; justify-content:center;
+    padding:120px 22px 60px; position:relative;
+  }
+  .hero .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:.14em;
+    color:var(--cyan); text-transform:uppercase; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(34px,7vw,74px); line-height:1.04; font-weight:700; margin:0 0 22px; max-width:16ch;
+    letter-spacing:-.01em;
+  }
+  .hero h1 em{font-style:normal; color:var(--text-dim);}
+  .hero p{
+    font-size:clamp(15px,2vw,18px); color:var(--text-dim); max-width:52ch; line-height:1.6; margin:0 0 30px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 20px; border-radius:8px; text-decoration:none;
+    font-size:14px; font-weight:500; border:1px solid var(--line); cursor:pointer;
+    background:var(--panel); color:var(--text); transition:border-color .2s, transform .2s;
+  }
+  .btn:hover{border-color:var(--cyan); transform:translateY(-1px);}
+  .btn.primary{background:var(--text); color:#14171a; border-color:var(--text);}
+  .btn.primary:hover{border-color:var(--cyan); background:var(--cyan); color:#0c0e10;}
+  .scroll-cue{
+    position:absolute; bottom:26px; left:22px; font-family:'JetBrains Mono',monospace;
+    font-size:11px; color:var(--text-dim); display:flex; align-items:center; gap:8px;
+  }
+  .scroll-cue .line{width:26px; height:1px; background:var(--text-dim); position:relative; overflow:hidden;}
+
+  /* ---------- Map section ---------- */
+  .map-section{position:relative; padding:70px 0 0;}
+  .map-head{padding:0 22px; margin-bottom:18px;}
+  .section-eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.12em; color:var(--cyan); text-transform:uppercase; margin-bottom:10px;}
+  .map-head h2{font-size:clamp(22px,4vw,32px); margin:0 0 10px;}
+  .map-head p{color:var(--text-dim); max-width:60ch; font-size:14.5px; line-height:1.6; margin:0;}
+
+  .map-wrap{
+    position:relative; width:100%; height:min(78vh,640px); min-height:420px;
+    margin-top:20px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse at 50% 40%, #191d21 0%, #14171a 70%);
+    touch-action:none;
+  }
+  #scene-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; cursor:grab;}
+  #scene-canvas:active{cursor:grabbing;}
+
+  .map-hint{
+    position:absolute; left:16px; bottom:14px; font-family:'JetBrains Mono',monospace;
+    font-size:11px; color:var(--text-dim); pointer-events:none; z-index:2;
+  }
+  .map-controls{
+    position:absolute; right:14px; bottom:14px; display:flex; gap:8px; z-index:3;
+  }
+  .icon-btn{
+    background:rgba(27,31,36,.85); border:1px solid var(--line); color:var(--text-dim);
+    width:34px; height:34px; border-radius:8px; cursor:pointer; font-size:14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .icon-btn:hover{color:var(--text); border-color:var(--cyan);}
+
+  .legend{
+    position:absolute; left:14px; top:14px; z-index:2; display:flex; flex-direction:column; gap:6px;
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--text-dim);
+    background:rgba(27,31,36,.7); padding:10px 12px; border-radius:8px; border:1px solid var(--line);
+  }
+  .legend .dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:7px;}
+
+  .no-webgl-fallback{display:none;}
+
+  /* ---------- Side panel ---------- */
+  .panel{
+    position:fixed; top:0; right:0; height:100%; width:min(420px,92vw);
+    background:var(--panel); border-left:1px solid var(--line);
+    transform:translateX(100%); transition:transform .35s cubic-bezier(.2,.8,.2,1);
+    z-index:200; overflow-y:auto; padding:26px 24px 60px;
+  }
+  .panel.open{transform:translateX(0);}
+  .panel-close{
+    position:absolute; top:18px; right:18px; background:none; border:none; color:var(--text-dim);
+    font-size:20px; cursor:pointer; line-height:1;
+  }
+  .panel-close:hover{color:var(--text);}
+  .panel .status-pill{
+    display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:.06em; padding:4px 10px; border-radius:20px;
+    border:1px solid var(--line); margin-bottom:16px; text-transform:uppercase;
+  }
+  .panel h3{font-size:22px; margin:0 0 4px;}
+  .panel .domain-tag{color:var(--text-dim); font-size:12.5px; margin-bottom:20px; font-family:'JetBrains Mono',monospace;}
+  .panel .field{margin-bottom:18px;}
+  .panel .field h4{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--cyan); margin:0 0 6px;
+  }
+  .panel .field p{font-size:14px; line-height:1.6; color:var(--text); margin:0;}
+  .tech-chips{display:flex; flex-wrap:wrap; gap:6px;}
+  .tech-chips span{
+    background:var(--panel-2); border:1px solid var(--line); padding:4px 9px; border-radius:6px;
+    font-size:11.5px; font-family:'JetBrains Mono',monospace; color:var(--text-dim);
+  }
+  .panel .links a{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 12px; background:var(--panel-2); border-radius:8px; margin-bottom:8px;
+    text-decoration:none; font-size:13px; border:1px solid transparent; transition:border-color .2s;
+  }
+  .panel .links a:hover{border-color:var(--cyan);}
+  .overlay-scrim{
+    position:fixed; inset:0; background:rgba(10,11,13,.5); opacity:0; pointer-events:none;
+    transition:opacity .3s; z-index:150;
+  }
+  .overlay-scrim.show{opacity:1; pointer-events:auto;}
+
+  /* ---------- Sections generic ---------- */
+  section{padding:80px 22px; max-width:1120px; margin:0 auto;}
+  .index-grid{display:grid; grid-template-columns:1fr; gap:12px; margin-top:24px;}
+  @media(min-width:720px){ .index-grid{grid-template-columns:1fr 1fr;} }
+  .index-card{
+    text-align:left; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 18px; cursor:pointer; transition:border-color .2s, transform .2s; color:var(--text);
+    font-family:inherit;
+  }
+  .index-card:hover{border-color:var(--cyan); transform:translateY(-2px);}
+  .index-card .row1{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .index-card h4{margin:0; font-size:16px; font-family:'Space Grotesk',sans-serif;}
+  .index-card p{margin:0; font-size:13px; color:var(--text-dim); line-height:1.5;}
+  .status-dot{width:7px; height:7px; border-radius:50%; display:inline-block;}
+
+  .skills-groups{display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px;}
+  @media(min-width:720px){ .skills-groups{grid-template-columns:1fr 1fr 1fr;} }
+  .skill-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px;}
+  .skill-card h4{margin:0 0 4px; font-size:14px; letter-spacing:.06em; font-family:'JetBrains Mono',monospace; color:var(--cyan); text-transform:uppercase;}
+  .skill-card .tier{font-size:10.5px; color:var(--text-dim); margin-bottom:10px; font-family:'JetBrains Mono',monospace;}
+  .skill-card ul{margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:6px;}
+  .skill-card li{background:var(--panel-2); padding:4px 9px; border-radius:6px; font-size:12px; color:var(--text-dim);}
+
+  .flow-strip{
+    display:flex; flex-wrap:wrap; gap:0; align-items:center; margin-top:26px;
+    font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--text-dim);
+  }
+  .flow-strip .step{
+    background:var(--panel); border:1px solid var(--line); padding:8px 12px; border-radius:7px; margin:4px 6px 4px 0;
+  }
+  .flow-strip .arrow{color:var(--text-dim); margin:0 2px;}
+
+  .achieve-list{display:grid; gap:10px; margin-top:22px;}
+  .achieve-list .item{
+    display:flex; gap:14px; padding:14px 16px; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+  }
+  .achieve-list .item .mark{color:var(--amber); font-family:'JetBrains Mono',monospace; font-size:13px; flex-shrink:0;}
+  .achieve-list .item p{margin:0; font-size:14px; color:var(--text-dim);}
+  .achieve-list .item strong{color:var(--text); font-weight:600;}
+
+  .ship-callout{
+    margin-top:34px; background:linear-gradient(135deg, var(--panel), var(--panel-2));
+    border:1px solid var(--line); border-radius:14px; padding:28px; display:flex; flex-wrap:wrap;
+    gap:24px; align-items:center; justify-content:space-between;
+  }
+  .ship-callout .txt{max-width:56ch;}
+  .ship-callout h3{margin:0 0 8px; font-size:19px;}
+  .ship-callout p{margin:0; color:var(--text-dim); font-size:14px; line-height:1.6;}
+  .ship-path{
+    display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:11px;
+    color:var(--text-dim); flex-wrap:wrap;
+  }
+  .ship-path .n{background:var(--panel-2); border:1px solid var(--line); padding:5px 9px; border-radius:6px;}
+  .ship-path .n.last{color:var(--amber); border-color:var(--amber);}
+
+  footer{
+    border-top:1px solid var(--line); padding:34px 22px 50px; text-align:center;
+    color:var(--text-dim); font-size:13px;
+  }
+  footer a{color:var(--cyan); text-decoration:none;}
+
+  /* ---------- Command palette ---------- */
+  .cmdk-overlay{
+    position:fixed; inset:0; background:rgba(10,11,13,.6); z-index:300; display:none;
+    align-items:flex-start; justify-content:center; padding-top:14vh;
+  }
+  .cmdk-overlay.open{display:flex;}
+  .cmdk-box{
+    width:min(560px,92vw); background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  .cmdk-box input{
+    width:100%; border:none; background:transparent; color:var(--text); font-size:16px;
+    padding:16px 18px; outline:none; font-family:'JetBrains Mono',monospace; border-bottom:1px solid var(--line);
+  }
+  .cmdk-list{max-height:320px; overflow-y:auto;}
+  .cmdk-item{
+    padding:12px 18px; display:flex; justify-content:space-between; cursor:pointer; font-size:14px;
+  }
+  .cmdk-item.active, .cmdk-item:hover{background:var(--panel-2);}
+  .cmdk-item span.tag{color:var(--text-dim); font-family:'JetBrains Mono',monospace; font-size:11px;}
+
+  .cmdk-fab{
+    position:fixed; bottom:20px; right:20px; z-index:90; width:52px; height:52px; border-radius:50%;
+    background:var(--cyan); color:#0c0e10; border:none; font-size:20px; cursor:pointer;
+    box-shadow:0 8px 24px rgba(99,210,201,.35);
+  }
+  @media(min-width:860px){ .cmdk-fab{display:none;} }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="brand">ABHI<span>^_^</span></div>
+  <ul class="nav-links">
+    <li><a href="#map">Systems</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experiments">Experiments</a></li>
+    <li><a href="#evidence">Evidence</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="cmdk-btn" id="cmdk-open" aria-label="Open command palette">
+    Search <kbd>Ctrl K</kbd>
+  </button>
+</nav>
+
+<main id="main-content">
+<header class="hero">
+  <div class="eyebrow mono">B.Tech CSE Student · Independent Builder</div>
+  <h1>A builder who keeps crossing the line between <em>Android, systems, graphics and AI.</em></h1>
+  <p>I ship real Android software from a phone, experiment with rendering engines and distributed robotics architecture, and treat AI coding tools as an accelerator — not a replacement for engineering judgment. This site is a map of that work, built directly from my public GitHub record.</p>
+  <div class="hero-actions">
+    <a class="btn primary" href="#map">Explore the build map ↓</a>
+    <a class="btn" href="https://github.com/Abhi13-coder" target="_blank" rel="noopener">View GitHub ↗</a>
+  </div>
+  <div class="scroll-cue mono"><div class="line"></div> SCROLL</div>
+</header>
+
+<section class="map-section" id="map">
+  <div class="map-head">
+    <div class="section-eyebrow">The Build Map</div>
+    <h2>One system, four orbits.</h2>
+    <p>Every planet and moon here is a real, publicly visible repository, orbiting a shared core. Drag to rotate, scroll or pinch to zoom, tap a node to open its evidence file. Status color tells you how far along it actually is — nothing here is dressed up as more finished than it is.</p>
+  </div>
+
+  <div class="map-wrap" id="map-wrap">
+    <canvas id="scene-canvas"></canvas>
+    <div class="legend">
+      <div><span class="dot" style="background:var(--amber)"></span>Shipped</div>
+      <div><span class="dot" style="background:var(--cyan)"></span>Active development</div>
+      <div><span class="dot" style="background:var(--violet)"></span>Architecture / concept</div>
+      <div><span class="dot" style="background:#6b7178"></span>Experiment</div>
+    </div>
+    <div class="map-hint mono" id="map-hint">drag to rotate · tap a planet</div>
+    <div class="map-controls">
+      <button class="icon-btn" id="zoom-in" aria-label="Zoom in">+</button>
+      <button class="icon-btn" id="zoom-out" aria-label="Zoom out">−</button>
+      <button class="icon-btn" id="reset-view" aria-label="Reset view">⟲</button>
+    </div>
+    <div class="no-webgl-fallback" id="no-webgl-fallback" style="padding:40px 20px; text-align:center; color:var(--text-dim);">
+      <p class="mono">3D rendering isn't available on this device — use the project index below instead.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-eyebrow">Project Index</div>
+  <h2 style="margin:0 0 8px;">Featured builds</h2>
+  <p style="color:var(--text-dim); max-width:60ch; font-size:14.5px;">An accessible, non-3D list of the same projects — same data, same links, keyboard navigable.</p>
+  <div class="index-grid" id="project-index">
+    <a class="index-card" href="https://github.com/Abhi13-coder/App-blur" target="_blank" rel="noopener"><div class="row1"><h4>AppBlur</h4><span class="status-dot" style="background:#e8a248"></span></div><p>An idle-touch privacy screen for Android. If you stop touching the screen for a configurable delay, a solid privacy scrim fades in over the display.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Agent-viewer" target="_blank" rel="noopener"><div class="row1"><h4>AndroidTk</h4><span class="status-dot" style="background:#63d2c9"></span></div><p>A native terminal / systems-tooling project for Android, iterated through 100+ commits on GitHub, aiming at a real Linux-like on-device workflow.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Phoneix-studio" target="_blank" rel="noopener"><div class="row1"><h4>Phoenix Studio</h4><span class="status-dot" style="background:#63d2c9"></span></div><p>An in-progress rendering engine built to develop Android games natively, on-device, with its own CI-tracked build pipeline.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai_for_all" target="_blank" rel="noopener"><div class="row1"><h4>AI for All</h4><span class="status-dot" style="background:#63d2c9"></span></div><p>A content/social app exploring how AI news, tutorials, and research can be made accessible in a feed-style product.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ros-IM" target="_blank" rel="noopener"><div class="row1"><h4>Ros-IM</h4><span class="status-dot" style="background:#9a8cff"></span></div><p>A designed architecture for a modular, distributed robotics suit system orchestrated with ROS — a documented design, not yet a built system.</p></a>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-eyebrow">Capability</div>
+  <h2 style="margin:0 0 8px;">Skills, grouped by domain</h2>
+  <p style="color:var(--text-dim); max-width:60ch; font-size:14.5px;">No percentage meters — just what's core, what's practical, and what's still experimental.</p>
+  <div class="skills-groups" id="skills-groups"></div>
+</section>
+
+<section id="workflow">
+  <div class="section-eyebrow">Method</div>
+  <h2 style="margin:0 0 8px;">AI-assisted, not AI-authored</h2>
+  <p style="color:var(--text-dim); max-width:62ch; font-size:14.5px;">Tools like Claude and GitHub Copilot are part of the workflow — for scaffolding, debugging, and speeding up implementation. Architecture decisions, review, and integration are still the engineer's job.</p>
+  <div class="flow-strip" id="flow-strip"></div>
+
+  <div class="ship-callout">
+    <div class="txt">
+      <h3>Built from a phone. No computer involved.</h3>
+      <p>AppBlur — the strongest shipped project on this map — I wrote, built, and released entirely from a smartphone: GitHub Actions handles the compile, sign, and release steps that would normally need a desktop and Android Studio.</p>
+    </div>
+    <div class="ship-path">
+      <span class="n">CODE ON PHONE</span><span class="mono">→</span>
+      <span class="n">PUSH</span><span class="mono">→</span>
+      <span class="n">GITHUB ACTIONS</span><span class="mono">→</span>
+      <span class="n">BUILD</span><span class="mono">→</span>
+      <span class="n last">RELEASED APK</span>
+    </div>
+  </div>
+</section>
+
+<section id="experiments">
+  <div class="section-eyebrow">Experimental Lab</div>
+  <h2 style="margin:0 0 8px;">Smaller, earlier-stage repositories</h2>
+  <p style="color:var(--text-dim); max-width:62ch; font-size:14.5px;">These are public on GitHub but visibly less mature — most have no README or extensive source inspection available beyond the profile listing. They're included honestly, as experiments, not finished products.</p>
+  <div class="index-grid" id="lab-index">
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai-cloud-phone-" target="_blank" rel="noopener"><div class="row1"><h4>Ai-cloud-phone-</h4><span class="status-dot" style="background:#6b7178"></span></div><p>A public experiment exploring a cloud-hosted "phone" concept, visible on GitHub as an HTML-based project.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai-cloud-phone-companion" target="_blank" rel="noopener"><div class="row1"><h4>Ai-cloud-phone-companion</h4><span class="status-dot" style="background:#6b7178"></span></div><p>A companion project to Ai-cloud-phone-, also HTML-based and early-stage.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai-habit-engine" target="_blank" rel="noopener"><div class="row1"><h4>Ai-habit-engine</h4><span class="status-dot" style="background:#6b7178"></span></div><p>A public repository exploring an AI-assisted habit-tracking concept.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Project.Vision" target="_blank" rel="noopener"><div class="row1"><h4>Project.Vision</h4><span class="status-dot" style="background:#6b7178"></span></div><p>An early-stage computer-vision / AI experiment.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Star-data-logger-" target="_blank" rel="noopener"><div class="row1"><h4>Star-data-logger-</h4><span class="status-dot" style="background:#6b7178"></span></div><p>An automation-flavored repository, likely a Python + GitHub Actions pipeline for logging GitHub star data.</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/anti-g" target="_blank" rel="noopener"><div class="row1"><h4>anti-g</h4><span class="status-dot" style="background:#6b7178"></span></div><p>A small public experiment; scope not yet substantiated beyond its presence on the profile.</p></a>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="section-eyebrow">Evidence</div>
+  <h2 style="margin:0 0 8px;">Source, not claims</h2>
+  <p style="color:var(--text-dim); max-width:62ch; font-size:14.5px;">Every project card links straight back to its GitHub repository — commit history, workflows, and releases included — so nothing on this page has to be taken on faith.</p>
+  <div class="index-grid" id="evidence-index">
+    <a class="index-card" href="https://github.com/Abhi13-coder/App-blur" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>AppBlur</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/App-blur</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Agent-viewer" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>AndroidTk</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Agent-viewer</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Phoneix-studio" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Phoenix Studio</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Phoneix-studio</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai_for_all" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>AI for All</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Ai_for_all</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ros-IM" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Ros-IM</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Ros-IM</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai-cloud-phone-" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Ai-cloud-phone-</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Ai-cloud-phone-</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai-cloud-phone-companion" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Ai-cloud-phone-companion</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Ai-cloud-phone-companion</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Ai-habit-engine" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Ai-habit-engine</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Ai-habit-engine</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Project.Vision" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Project.Vision</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Project.Vision</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/Star-data-logger-" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>Star-data-logger-</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/Star-data-logger-</p></a>
+    <a class="index-card" href="https://github.com/Abhi13-coder/anti-g" target="_blank" rel="noopener" style="display:block;text-decoration:none;"><div class="row1"><h4>anti-g</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">Abhi13-coder/anti-g</p></a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-eyebrow">About</div>
+  <h2 style="margin:0 0 8px;">Abhiram</h2>
+  <p style="color:var(--text-dim); max-width:62ch; font-size:15px; line-height:1.7;">
+    I'm a B.Tech CSE student and independent builder. I work across Android systems tooling, native rendering engines,
+    distributed-robotics architecture, and practical AI/LLM experimentation — usually starting from constraints
+    (a single phone, no desktop, free CI minutes) rather than ideal conditions. I use AI coding tools deliberately,
+    as an accelerator inside a normal engineering workflow: requirements, architecture, implementation, review, and release.
+  </p>
+  <p style="color:var(--text-dim); max-width:62ch; font-size:15px; line-height:1.7; margin-top:16px;">
+    Right now: pairing AI with my own Python skills — fine-tuning, quantization, and prompt/instruction tuning,
+    run on Colab, Kaggle, and Hugging Face. Also comfortable with HTML, CSS, and JS, plus poster and thumbnail
+    design in the VistaCreate app.
+  </p>
+</section>
+
+<section id="contact">
+  <div class="section-eyebrow">Contact</div>
+  <h2 style="margin:0 0 8px;">Get in touch</h2>
+  <div class="hero-actions">
+    <a class="btn primary" href="https://github.com/Abhi13-coder" target="_blank" rel="noopener">GitHub — Abhi13-coder ↗</a>
+    <a class="btn" href="mailto:busaniabhi@gmail.com">Email — busaniabhi@gmail.com</a>
+  </div>
+  <div style="margin-top:20px;">
+  <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="abhi-busani-a1a56b426" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/abhi-busani-a1a56b426?trk=profile-badge" style="display:none;">Abhi Busani</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Built as an interactive map, not a résumé. <a href="https://github.com/Abhi13-coder" target="_blank" rel="noopener">github.com/Abhi13-coder</a></p>
+</footer>
+
+<!-- Side evidence panel -->
+<div class="overlay-scrim" id="overlay-scrim"></div>
+<aside class="panel" id="panel" aria-hidden="true">
+  <button class="panel-close" id="panel-close" aria-label="Close panel">✕</button>
+  <div id="panel-content"></div>
+</aside>
+
+<!-- Command palette -->
+<div class="cmdk-overlay" id="cmdk-overlay">
+  <div class="cmdk-box">
+    <input type="text" id="cmdk-input" placeholder="Type a command… /projects /android /ros /ai /github" autocomplete="off" />
+    <div class="cmdk-list" id="cmdk-list"></div>
+  </div>
+</div>
+<button class="cmdk-fab" id="cmdk-fab" aria-label="Open command palette">⌘</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ============================================================
+   DATA — sourced from live inspection of github.com/Abhi13-coder
+   ============================================================ */
+const STATUS = {
+  SHIPPED:      { label:'Shipped',              color:'#e8a248' },
+  ACTIVE:       { label:'Active development',   color:'#63d2c9' },
+  ARCH:         { label:'Architecture / doc',    color:'#9a8cff' },
+  EXPERIMENT:   { label:'Experiment',            color:'#6b7178' },
+};
+
+const PROJECTS = [
+  {
+    id:'appblur', label:'AppBlur', domain:'BUILD', status:'SHIPPED',
+    what:'An idle-touch privacy screen for Android. If you stop touching the screen for a configurable delay (5–30s), a solid privacy scrim fades in over the entire display, blocking shoulder-surfers.',
+    why:'Built to solve a real, everyday privacy problem — someone glancing at your screen in public — without needing invasive permissions.',
+    how:'Uses a transparent, "not touchable" full-screen overlay window. Because Android notifies the overlay whenever a touch happens anywhere on screen, the app can detect system-wide idle time with zero accessibility service and zero screen-recording permission. It is a solid-color scrim rather than true GPU blur, since real optical blur needs Android 12+ and this targets Android 10+.',
+    tech:['Kotlin','Android SDK 29–34','Foreground Service','GitHub Actions','Gradle 8.9'],
+    evidence:[
+      {label:'Source repository', url:'https://github.com/Abhi13-coder/App-blur'},
+      {label:'Download latest APK', url:'https://github.com/Abhi13-coder/App-blur/releases/download/App/app-debug.apk'},
+    ],
+  },
+  {
+    id:'androidtk', label:'AndroidTk', domain:'SYSTEMS', status:'ACTIVE',
+    what:'A native terminal / systems-tooling project for Android, built and iterated through 115+ commits on GitHub. Focused on making a real Linux-like environment behave correctly on-device.',
+    why:'Grew out of wanting a genuine, native command-line workflow on a stock Android phone, without a rooted device or a desktop in the loop.',
+    how:'Runs through a continuous GitHub Actions workflow bundling native binaries for the app. Still evolving — this is systems/tooling work, not a finished terminal emulator product.',
+    tech:['Android NDK','Shell tooling','GitHub Actions','Native binaries'],
+    evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Agent-viewer'}],
+  },
+  {
+    id:'phoenix', label:'Phoenix Studio', domain:'BUILD', status:'ACTIVE',
+    what:'An in-progress rendering engine built to develop Android games natively, on-device. 83 commits and a live CI workflow track its progress.',
+    why:'To understand and build the core of a game engine — camera, mesh, shader, scene graph — from the ground up, rather than just consuming one.',
+    how:'Structured as a standalone engine module with its own build pipeline via GitHub Actions. It is explicitly not production-ready — an active, evolving rendering project rather than a shipped engine.',
+    tech:['Kotlin/Java','OpenGL ES','Android Gradle','Scene graph architecture'],
+    evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Phoneix-studio'}],
+  },
+  {
+    id:'aiforall', label:'AI for All', domain:'INTELLIGENCE', status:'ACTIVE',
+    what:'A content/social product exploring how AI news, tutorials, and research can be made accessible in a feed-style app. 50 commits, active CI workflow.',
+    why:'To practice building a full product loop — accounts, content, feed — around a genuinely useful idea: keeping up with AI without needing to be a researcher.',
+    how:'Structured as an app module (AIForAll) with its own GitHub Actions build. Still in active development / testing, not a production social network.',
+    tech:['Firebase','Firestore','Android','GitHub Actions'],
+    evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Ai_for_all'}],
+  },
+  {
+    id:'rosim', label:'Ros-IM', domain:'SYSTEMS', status:'ARCH',
+    what:'A designed architecture for a modular, distributed suit system, orchestrated with ROS (Robot Operating System) — sensor fusion, actuator control, and node-based communication across Arduino, ESP32, and Raspberry Pi.',
+    why:'To think through how a real distributed robotics system would be architected end-to-end: nodes, topics, services, simulation, and cloud execution — as a design exercise.',
+    how:'Documented as a system architecture: each module (dart launcher, drone bay, HUD, flight jets) as a ROS node, communicating over topics/services, with Gazebo simulation proposed before any hardware step. The public repository currently holds the architecture document itself, not implemented ROS nodes or hardware — this is a documented design, not a built or tested system.',
+    tech:['ROS','ROS topics/services','Docker','GitHub Codespaces','Termux/Ubuntu CLI'],
+    evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Ros-IM'}],
+  },
+];
+
+const LAB = [
+  { id:'aicloud', label:'Ai-cloud-phone-', domain:'EXPERIMENTS', status:'EXPERIMENT',
+    what:'A public experiment exploring a cloud-hosted "phone" concept. Visible on GitHub as an HTML-based project; not deeply inspected beyond the profile listing.',
+    tech:['HTML'], evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Ai-cloud-phone-'}] },
+  { id:'aicloudcomp', label:'Ai-cloud-phone-companion', domain:'EXPERIMENTS', status:'EXPERIMENT',
+    what:'A companion project to Ai-cloud-phone-, also HTML-based. Early-stage and paired with the main experiment.',
+    tech:['HTML'], evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Ai-cloud-phone-companion'}] },
+  { id:'habit', label:'Ai-habit-engine', domain:'EXPERIMENTS', status:'EXPERIMENT',
+    what:'A public repository exploring an AI-assisted habit-tracking concept. Kept here as an experiment rather than a described product, pending deeper inspection.',
+    tech:['Experimental'], evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Ai-habit-engine'}] },
+  { id:'vision', label:'Project.Vision', domain:'EXPERIMENTS', status:'EXPERIMENT',
+    what:'An early-stage computer-vision / AI experiment. Named for its focus area; not yet substantiated by deep source inspection.',
+    tech:['Experimental'], evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Project.Vision'}] },
+  { id:'stardata', label:'Star-data-logger-', domain:'EXPERIMENTS', status:'EXPERIMENT',
+    what:'An automation-flavored repository — likely a Python + GitHub Actions pipeline for logging GitHub star data. Treated conservatively pending full source review.',
+    tech:['Python (likely)','GitHub Actions'], evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/Star-data-logger-'}] },
+  { id:'antig', label:'anti-g', domain:'EXPERIMENTS', status:'EXPERIMENT',
+    what:'A small public experiment; scope not yet substantiated beyond its presence on the profile.',
+    tech:['Experimental'], evidence:[{label:'Source repository', url:'https://github.com/Abhi13-coder/anti-g'}] },
+];
+
+const DOMAINS = {
+  SYSTEMS:      { label:'Systems',      color:'#63d2c9', angle: 180 },
+  BUILD:        { label:'Build',        color:'#e8a248', angle: 90  },
+  INTELLIGENCE: { label:'Intelligence', color:'#9a8cff', angle: 0   },
+  EXPERIMENTS:  { label:'Experiments',  color:'#6b7178', angle: 270 },
+};
+
+/* ============================================================
+   PANEL — shared render for both 3D nodes and the 2D index
+   ============================================================ */
+const panel = document.getElementById('panel');
+const panelContent = document.getElementById('panel-content');
+const scrim = document.getElementById('overlay-scrim');
+
+function openPanel(p){
+  const st = STATUS[p.status];
+  panelContent.innerHTML = `
+    <span class="status-pill mono" style="border-color:${st.color}; color:${st.color}">
+      <span class="dot" style="width:6px;height:6px;border-radius:50%;background:${st.color};display:inline-block;"></span>
+      ${st.label}
+    </span>
+    <h3>${p.label}</h3>
+    <div class="domain-tag">${DOMAINS[p.domain] ? DOMAINS[p.domain].label : p.domain}</div>
+    <div class="field"><h4>What</h4><p>${p.what}</p></div>
+    ${p.why ? `<div class="field"><h4>Why</h4><p>${p.why}</p></div>` : ''}
+    ${p.how ? `<div class="field"><h4>How</h4><p>${p.how}</p></div>` : ''}
+    <div class="field"><h4>Tech</h4><div class="tech-chips">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div></div>
+    <div class="field links"><h4>Evidence &amp; links</h4>
+      ${p.evidence.map(e=>`<a href="${e.url}" target="_blank" rel="noopener">${e.label} <span>↗</span></a>`).join('')}
+    </div>
+  `;
+  panel.classList.add('open');
+  panel.setAttribute('aria-hidden','false');
+  scrim.classList.add('show');
+}
+function closePanel(){
+  panel.classList.remove('open');
+  panel.setAttribute('aria-hidden','true');
+  scrim.classList.remove('show');
+}
+document.getElementById('panel-close').addEventListener('click', closePanel);
+scrim.addEventListener('click', closePanel);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') { closePanel(); closeCmdk(); } });
+
+/* ============================================================
+   2D accessible index (also acts as WebGL fallback)
+   ============================================================ */
+function buildIndexCard(p){
+  const st = STATUS[p.status];
+  const btn = document.createElement('button');
+  btn.className = 'index-card';
+  btn.innerHTML = `
+    <div class="row1">
+      <h4>${p.label}</h4>
+      <span class="status-dot" style="background:${st.color}"></span>
+    </div>
+    <p>${p.what.slice(0,110)}${p.what.length>110?'…':''}</p>
+  `;
+  btn.addEventListener('click', ()=>openPanel(p));
+  return btn;
+}
+const projectIndex = document.getElementById('project-index');
+projectIndex.innerHTML = '';
+PROJECTS.forEach(p=>projectIndex.appendChild(buildIndexCard(p)));
+
+const labIndex = document.getElementById('lab-index');
+labIndex.innerHTML = '';
+LAB.forEach(p=>labIndex.appendChild(buildIndexCard(p)));
+
+const evidenceIndex = document.getElementById('evidence-index');
+evidenceIndex.innerHTML = '';
+[...PROJECTS, ...LAB].forEach(p=>{
+  const a = document.createElement('a');
+  a.className = 'index-card';
+  a.href = p.evidence[0].url;
+  a.target = '_blank'; a.rel='noopener';
+  a.style.display='block'; a.style.textDecoration='none';
+  a.innerHTML = `<div class="row1"><h4>${p.label}</h4><span class="mono" style="font-size:11px;color:var(--text-dim)">↗</span></div><p class="mono" style="font-size:12px;">${p.evidence[0].url.replace('https://github.com/','')}</p>`;
+  evidenceIndex.appendChild(a);
+});
+
+/* ============================================================
+   Skills
+   ============================================================ */
+const SKILLS = [
+  { name:'Android', tier:'CORE', items:['Kotlin','Gradle','Services','Overlays','Permissions','APK release'] },
+  { name:'Systems', tier:'CORE', items:['Linux','Termux','CLI tooling','SSH','Android system integration'] },
+  { name:'Graphics', tier:'PRACTICAL', items:['OpenGL ES','Meshes','Shaders','Vectors / matrices','Camera systems'] },
+  { name:'Robotics', tier:'EXPERIMENTAL', items:['ROS','Gazebo','Arduino','ESP32','Raspberry Pi'] },
+  { name:'AI', tier:'PRACTICAL', items:['LLM prompting','Agents','Google Colab','Model experimentation'] },
+  { name:'DevOps', tier:'CORE', items:['Git','GitHub Actions','CI/CD','Codespaces'] },
+];
+const skillsGroups = document.getElementById('skills-groups');
+skillsGroups.innerHTML = '';
+SKILLS.forEach(s=>{
+  const card = document.createElement('div');
+  card.className='skill-card';
+  card.innerHTML = `<h4>${s.name}</h4><div class="tier mono">${s.tier}</div><ul>${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+  skillsGroups.appendChild(card);
+});
+
+const FLOW = ['REQUIREMENTS','ARCHITECTURE','AI-ASSISTED IMPLEMENTATION','CODE REVIEW','INTEGRATION','DEBUGGING','TESTING','BUILD','RELEASE'];
+const flowStrip = document.getElementById('flow-strip');
+FLOW.forEach((step,i)=>{
+  const el = document.createElement('span');
+  el.className='step'; el.textContent=step;
+  flowStrip.appendChild(el);
+  if(i<FLOW.length-1){ const ar=document.createElement('span'); ar.className='arrow'; ar.textContent='→'; flowStrip.appendChild(ar); }
+});
+
+/* ============================================================
+   Command palette
+   ============================================================ */
+const COMMANDS = [
+  { tag:'/projects', label:'Jump to Project Index', action:()=>scrollTo('#projects') },
+  { tag:'/systems', label:'Jump to Build Map', action:()=>scrollTo('#map') },
+  { tag:'/android', label:'Open AndroidTk', action:()=>openPanel(PROJECTS.find(p=>p.id==='androidtk')) },
+  { tag:'/ros', label:'Open Ros-IM', action:()=>openPanel(PROJECTS.find(p=>p.id==='rosim')) },
+  { tag:'/ai', label:'Open AI for All', action:()=>openPanel(PROJECTS.find(p=>p.id==='aiforall')) },
+  { tag:'/graphics', label:'Open Phoenix Studio', action:()=>openPanel(PROJECTS.find(p=>p.id==='phoenix')) },
+  { tag:'/shipped', label:'Open AppBlur', action:()=>openPanel(PROJECTS.find(p=>p.id==='appblur')) },
+  { tag:'/experiments', label:'Jump to Experimental Lab', action:()=>scrollTo('#experiments') },
+  { tag:'/skills', label:'Jump to Skills', action:()=>scrollTo('#skills') },
+  { tag:'/github', label:'Open GitHub profile', action:()=>window.open('https://github.com/Abhi13-coder','_blank') },
+  { tag:'/contact', label:'Jump to Contact', action:()=>scrollTo('#contact') },
+  { tag:'/email', label:'Email me — busaniabhi@gmail.com', action:()=>window.open('mailto:busaniabhi@gmail.com','_blank') },
+];
+function scrollTo(sel){ document.querySelector(sel).scrollIntoView({behavior:'smooth'}); }
+
+const cmdkOverlay = document.getElementById('cmdk-overlay');
+const cmdkInput = document.getElementById('cmdk-input');
+const cmdkList = document.getElementById('cmdk-list');
+let cmdkActive = 0;
+
+function renderCmdk(filter=''){
+  const items = COMMANDS.filter(c => (c.tag+c.label).toLowerCase().includes(filter.toLowerCase()));
+  cmdkList.innerHTML = items.map((c,i)=>`<div class="cmdk-item ${i===cmdkActive?'active':''}" data-i="${i}"><span>${c.label}</span><span class="tag">${c.tag}</span></div>`).join('') || `<div class="cmdk-item"><span>No matches</span></div>`;
+  cmdkList.querySelectorAll('.cmdk-item').forEach(el=>{
+    el.addEventListener('click', ()=>{ const it=items[+el.dataset.i]; if(it){ it.action(); closeCmdk(); } });
+  });
+  cmdkList._items = items;
+}
+function openCmdk(){ cmdkOverlay.classList.add('open'); cmdkInput.value=''; cmdkActive=0; renderCmdk(); cmdkInput.focus(); }
+function closeCmdk(){ cmdkOverlay.classList.remove('open'); }
+document.getElementById('cmdk-open').addEventListener('click', openCmdk);
+document.getElementById('cmdk-fab').addEventListener('click', openCmdk);
+cmdkOverlay.addEventListener('click', e=>{ if(e.target===cmdkOverlay) closeCmdk(); });
+cmdkInput.addEventListener('input', e=>{ cmdkActive=0; renderCmdk(e.target.value); });
+cmdkInput.addEventListener('keydown', e=>{
+  const items = cmdkList._items || [];
+  if(e.key==='ArrowDown'){ e.preventDefault(); cmdkActive=Math.min(cmdkActive+1, items.length-1); renderCmdk(cmdkInput.value); }
+  if(e.key==='ArrowUp'){ e.preventDefault(); cmdkActive=Math.max(cmdkActive-1, 0); renderCmdk(cmdkInput.value); }
+  if(e.key==='Enter'){ const it=items[cmdkActive]; if(it){ it.action(); closeCmdk(); } }
+});
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); openCmdk(); }
+  if(e.key==='/' && document.activeElement.tagName!=='INPUT'){ e.preventDefault(); openCmdk(); }
+});
+
+/* ============================================================
+   3D BUILD MAP — Three.js
+   ============================================================ */
+(function initScene(){
+  const wrap = document.getElementById('map-wrap');
+  const canvas = document.getElementById('scene-canvas');
+  const hint = document.getElementById('map-hint');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isSmall = window.innerWidth < 720;
+
+  let webglOK = true;
+  try{
+    const testCanvas = document.createElement('canvas');
+    webglOK = !!(testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl'));
+  }catch(e){ webglOK = false; }
+  if(typeof THREE === 'undefined') webglOK = false;
+
+  if(!webglOK){
+    canvas.style.display='none';
+    document.getElementById('no-webgl-fallback').style.display='block';
+    document.querySelector('.map-controls').style.display='none';
+    document.querySelector('.legend').style.display='none';
+    hint.style.display='none';
+    return;
+  }
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x14171a, 0.02);
+
+  // ---- Starfield backdrop (purely decorative, no interaction logic) ----
+  (function addStarfield(){
+    const STAR_COUNT = 900;
+    const positions = new Float32Array(STAR_COUNT * 3);
+    for(let i=0;i<STAR_COUNT;i++){
+      const r = 60 + Math.random()*70;
+      const theta = Math.random()*Math.PI*2;
+      const phi = Math.acos((Math.random()*2)-1);
+      positions[i*3]   = r*Math.sin(phi)*Math.cos(theta);
+      positions[i*3+1] = r*Math.cos(phi);
+      positions[i*3+2] = r*Math.sin(phi)*Math.sin(theta);
+    }
+    const starGeo = new THREE.BufferGeometry();
+    starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const starMat = new THREE.PointsMaterial({ color:0xe7e4dc, size:0.22, transparent:true, opacity:0.55, sizeAttenuation:true });
+    scene.add(new THREE.Points(starGeo, starMat));
+  })();
+
+  const camera = new THREE.PerspectiveCamera(48, wrap.clientWidth/wrap.clientHeight, 0.1, 200);
+  let camDist = isSmall ? 22 : 18;
+  let camAzimuth = 0.6, camElevation = 0.45;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isSmall?1.5:2));
+  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+
+  scene.add(new THREE.AmbientLight(0x8f97a0, 0.55));
+  const key = new THREE.PointLight(0x63d2c9, 0.7, 60);
+  key.position.set(10,14,10);
+  scene.add(key);
+  const rim = new THREE.PointLight(0xe8a248, 0.5, 60);
+  rim.position.set(-12,-6,-8);
+  scene.add(rim);
+  // warm "sunlight" emitted from the core, sells the solar-system feel
+  const sunLight = new THREE.PointLight(0xffcf8a, 1.6, 40, 1.5);
+  sunLight.position.set(0,0,0);
+  scene.add(sunLight);
+
+  // ---- Build node graph ----
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const nodeMeshes = []; // {mesh, data, baseScale}
+  const lineSegs = []; // for pulse animation: {points, status, mesh}
+
+  function domainPos(domain, radius){
+    const a = THREE.MathUtils.degToRad(DOMAINS[domain].angle);
+    return new THREE.Vector3(Math.cos(a)*radius, 0, Math.sin(a)*radius);
+  }
+
+  // ---- Procedural surface textures (canvas-generated, no external images needed) ----
+  function shadeColor(c, factor){
+    const r = Math.min(255, Math.max(0, Math.round(c.r*255*factor)));
+    const g = Math.min(255, Math.max(0, Math.round(c.g*255*factor)));
+    const b = Math.min(255, Math.max(0, Math.round(c.b*255*factor)));
+    return `rgb(${r},${g},${b})`;
+  }
+  function makePlanetTexture(hex, style){
+    const size = 256;
+    const cvs = document.createElement('canvas');
+    cvs.width = size; cvs.height = size;
+    const ctx = cvs.getContext('2d');
+    const c = new THREE.Color(hex);
+    ctx.fillStyle = shadeColor(c, 1);
+    ctx.fillRect(0,0,size,size);
+
+    if(style==='bands'){ // ice-giant, gentle wavy horizontal bands
+      for(let y=0;y<size;y+=2){
+        const wobble = Math.sin(y*0.12)*4 + Math.sin(y*0.05)*8;
+        const f = 0.85 + (((y+wobble)%40)/40)*0.3;
+        ctx.fillStyle = shadeColor(c, f);
+        ctx.fillRect(0,y,size,2.2);
+      }
+    } else if(style==='gas'){ // jupiter-like turbulent bands
+      for(let y=0;y<size;y+=6){
+        ctx.fillStyle = shadeColor(c, 0.8 + Math.sin(y*0.09)*0.25);
+        ctx.fillRect(0,y,size,6);
+      }
+      ctx.globalAlpha = 0.13;
+      for(let i=0;i<40;i++){
+        ctx.fillStyle = shadeColor(c, 1.3);
+        const rx = Math.random()*size, ry = Math.random()*size, rr = 10+Math.random()*30;
+        ctx.beginPath(); ctx.ellipse(rx,ry,rr,rr*0.4,Math.random()*Math.PI,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    } else if(style==='rocky'){ // desert/terrain blotches
+      ctx.globalAlpha = 0.16;
+      for(let i=0;i<170;i++){
+        ctx.fillStyle = shadeColor(c, 0.65 + Math.random()*0.7);
+        const rx = Math.random()*size, ry = Math.random()*size, rr = 4+Math.random()*18;
+        ctx.beginPath(); ctx.arc(rx,ry,rr,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    } else if(style==='cratered'){ // small moon-like craters
+      for(let i=0;i<80;i++){
+        const rx = Math.random()*size, ry = Math.random()*size, rr = 2+Math.random()*9;
+        ctx.globalAlpha = 0.28;
+        ctx.fillStyle = shadeColor(c, 0.55);
+        ctx.beginPath(); ctx.arc(rx,ry,rr,0,Math.PI*2); ctx.fill();
+        ctx.globalAlpha = 0.14;
+        ctx.fillStyle = shadeColor(c, 1.4);
+        ctx.beginPath(); ctx.arc(rx-rr*0.3, ry-rr*0.3, rr*0.6,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    } else if(style==='plasma'){ // sun surface turbulence
+      for(let i=0;i<220;i++){
+        const rx = Math.random()*size, ry = Math.random()*size, rr = 4+Math.random()*24;
+        ctx.globalAlpha = 0.10 + Math.random()*0.14;
+        ctx.fillStyle = shadeColor(c, Math.random()>0.5 ? 1.35 : 0.7);
+        ctx.beginPath(); ctx.arc(rx,ry,rr,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    const tex = new THREE.CanvasTexture(cvs);
+    tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+    return tex;
+  }
+
+  // Core node — styled as the "sun" at the center of the system
+  const sunTex = makePlanetTexture(0xe8a248, 'plasma');
+  const coreGeo = new THREE.SphereGeometry(0.95, 32, 32);
+  const coreMat = new THREE.MeshStandardMaterial({ map:sunTex, color:0xffcf8a, emissive:0xe8a248, emissiveMap:sunTex, emissiveIntensity:1.15, roughness:0.55, metalness:0 });
+  const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+  group.add(coreMesh);
+
+  // Layered glow halo behind the core sun (billboard sprites, decorative only)
+  (function addSunGlow(){
+    function glowSprite(inner, outer, alpha, scale){
+      const cvs = document.createElement('canvas');
+      cvs.width = cvs.height = 256;
+      const ctx = cvs.getContext('2d');
+      const grad = ctx.createRadialGradient(128,128,inner,128,128,outer);
+      grad.addColorStop(0, `rgba(255,207,138,${alpha})`);
+      grad.addColorStop(0.5, `rgba(232,162,72,${alpha*0.45})`);
+      grad.addColorStop(1, 'rgba(232,162,72,0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,256,256);
+      const tex = new THREE.CanvasTexture(cvs);
+      const mat = new THREE.SpriteMaterial({ map:tex, transparent:true, depthWrite:false });
+      const sprite = new THREE.Sprite(mat);
+      sprite.scale.set(scale,scale,1);
+      group.add(sprite);
+      return sprite;
+    }
+    glowSprite(0, 128, 0.55, 6.5);   // outer soft corona
+    glowSprite(0, 90, 0.85, 3.4);    // inner bright halo
+  })();
+
+
+
+  const coreData = { id:'core', label:'ABHI', domain:'CORE', status:'ACTIVE',
+    what:'The center of my build map. Every domain below — Systems, Build, Intelligence, Experiments — is a real branch of my public work.',
+    tech:['Android','Systems','Graphics','Robotics','AI'],
+    evidence:[{label:'GitHub profile', url:'https://github.com/Abhi13-coder'}] };
+  nodeMeshes.push({ mesh:coreMesh, data:coreData, baseScale:1, radius:1.1 });
+
+  const hubRadius = 6.4;
+
+  // Faint orbit ring around the domain-hub radius — decorative only, doesn't affect node positions/logic
+  (function addOrbitRing(){
+    const ringGeo = new THREE.RingGeometry(hubRadius-0.02, hubRadius+0.02, 128);
+    const ringMat = new THREE.MeshBasicMaterial({ color:0x9aa0a6, transparent:true, opacity:0.16, side:THREE.DoubleSide });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = Math.PI/2;
+    group.add(ring);
+  })();
+
+  // Domain hub nodes — styled as planets orbiting the core sun
+  const hubMeshes = {};
+  const HUB_STYLES = { SYSTEMS:'bands', BUILD:'rocky', INTELLIGENCE:'gas', EXPERIMENTS:'cratered' };
+  Object.keys(DOMAINS).forEach(domKey=>{
+    const dom = DOMAINS[domKey];
+    const pos = domainPos(domKey, hubRadius);
+    const geo = new THREE.SphereGeometry(0.55, 24, 24);
+    const planetTex = makePlanetTexture(dom.color, HUB_STYLES[domKey] || 'rocky');
+    const mat = new THREE.MeshStandardMaterial({ map:planetTex, color:dom.color, emissive:new THREE.Color(dom.color).multiplyScalar(0.25), emissiveMap:planetTex, roughness:0.6, metalness:0.05 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(pos);
+    group.add(mesh);
+    hubMeshes[domKey] = mesh;
+
+    const hubData = { id:'hub-'+domKey, label:dom.label, domain:domKey, status:'ACTIVE',
+      what:`The ${dom.label.toLowerCase()} branch of the build map.`, tech:[], evidence:[{label:'GitHub profile', url:'https://github.com/Abhi13-coder'}] };
+    nodeMeshes.push({ mesh, data:null, baseScale:1, radius:0.7, isHub:true });
+
+    // line core -> hub
+    addLine(new THREE.Vector3(0,0,0), pos, dom.color, 'ACTIVE');
+  });
+
+  function addLine(a,b,colorHex,status){
+    const geo = new THREE.BufferGeometry().setFromPoints([a,b]);
+    const mat = new THREE.LineBasicMaterial({ color:colorHex, transparent:true, opacity:0.35 });
+    const line = new THREE.Line(geo, mat);
+    group.add(line);
+    lineSegs.push({ mat, status });
+  }
+
+  // Project nodes around their domain hub
+  function placeProjectsForDomain(domainKey, projects){
+    const hubPos = domainPos(domainKey, hubRadius);
+    const n = projects.length;
+    const spread = 2.6;
+    projects.forEach((p, i)=>{
+      const localAngle = (i - (n-1)/2) * 0.9;
+      const dir = hubPos.clone().normalize();
+      const perp = new THREE.Vector3(-dir.z, 0, dir.x);
+      const dist = 3.0 + (i%2)*0.6;
+      const pos = hubPos.clone().add(dir.clone().multiplyScalar(dist)).add(perp.clone().multiplyScalar(Math.sin(localAngle)*spread));
+      pos.y = Math.cos(localAngle) * 0.8 - 0.2;
+
+      const st = STATUS[p.status];
+      const geo = new THREE.SphereGeometry(0.4, 16, 16);
+      const moonTex = makePlanetTexture(st.color, 'cratered');
+      const mat = new THREE.MeshStandardMaterial({ map:moonTex, color:st.color, emissive:new THREE.Color(st.color).multiplyScalar(0.3), emissiveMap:moonTex, roughness:0.6, metalness:0.05 });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.copy(pos);
+      group.add(mesh);
+      nodeMeshes.push({ mesh, data:p, baseScale:1, radius:0.55 });
+
+      addLine(hubPos, pos, st.color, p.status);
+
+      // label sprite
+      addLabel(pos, p.label, st.color);
+    });
+  }
+
+  function addLabel(pos, text, colorHex){
+    const cvs = document.createElement('canvas');
+    const ctx = cvs.getContext('2d');
+    const fontSize = 42;
+    ctx.font = `500 ${fontSize}px 'JetBrains Mono', monospace`;
+    const w = ctx.measureText(text).width + 40;
+    cvs.width = w; cvs.height = 64;
+    ctx.font = `500 ${fontSize}px 'JetBrains Mono', monospace`;
+    ctx.fillStyle = 'rgba(20,23,26,0.0)';
+    ctx.fillRect(0,0,cvs.width,cvs.height);
+    ctx.fillStyle = '#e7e4dc';
+    ctx.textBaseline='middle';
+    ctx.fillText(text, 10, 34);
+    const tex = new THREE.CanvasTexture(cvs);
+    const mat = new THREE.SpriteMaterial({ map:tex, transparent:true, depthWrite:false });
+    const sprite = new THREE.Sprite(mat);
+    const scale = 0.014 * (isSmall?1.3:1);
+    sprite.scale.set(cvs.width*scale, cvs.height*scale, 1);
+    sprite.position.copy(pos).add(new THREE.Vector3(0, 0.75, 0));
+    group.add(sprite);
+  }
+
+  // domain hub labels
+  Object.keys(DOMAINS).forEach(domKey=>{
+    addLabel(domainPos(domKey, hubRadius).add(new THREE.Vector3(0,0.4,0)), DOMAINS[domKey].label.toUpperCase(), DOMAINS[domKey].color);
+  });
+
+  placeProjectsForDomain('SYSTEMS', PROJECTS.filter(p=>p.domain==='SYSTEMS'));
+  placeProjectsForDomain('BUILD', PROJECTS.filter(p=>p.domain==='BUILD'));
+  placeProjectsForDomain('INTELLIGENCE', PROJECTS.filter(p=>p.domain==='INTELLIGENCE'));
+  placeProjectsForDomain('EXPERIMENTS', LAB);
+
+  // ---- Camera control (manual orbit, no OrbitControls dependency) ----
+  function updateCamera(){
+    const x = camDist * Math.cos(camElevation) * Math.sin(camAzimuth);
+    const y = camDist * Math.sin(camElevation);
+    const z = camDist * Math.cos(camElevation) * Math.cos(camAzimuth);
+    camera.position.set(x,y,z);
+    camera.lookAt(0,0,0);
+  }
+  updateCamera();
+
+  let dragging = false, lastX=0, lastY=0, autoRotate = !reducedMotion;
+  canvas.addEventListener('pointerdown', e=>{ dragging=true; lastX=e.clientX; lastY=e.clientY; autoRotate=false; hint.style.opacity='0.4'; });
+  window.addEventListener('pointerup', ()=>{ dragging=false; });
+  window.addEventListener('pointermove', e=>{
+    if(!dragging) return;
+    const dx = e.clientX-lastX, dy = e.clientY-lastY;
+    camAzimuth -= dx*0.005;
+    camElevation = THREE.MathUtils.clamp(camElevation + dy*0.004, 0.08, 1.3);
+    lastX=e.clientX; lastY=e.clientY;
+  });
+  canvas.addEventListener('wheel', e=>{
+    e.preventDefault();
+    camDist = THREE.MathUtils.clamp(camDist + e.deltaY*0.01, 8, 34);
+  }, { passive:false });
+
+  // pinch zoom
+  let pinchDist = null;
+  canvas.addEventListener('touchstart', e=>{
+    if(e.touches.length===2){ pinchDist = Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY); }
+  }, { passive:true });
+  canvas.addEventListener('touchmove', e=>{
+    if(e.touches.length===2 && pinchDist!=null){
+      const d = Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
+      camDist = THREE.MathUtils.clamp(camDist - (d-pinchDist)*0.03, 8, 34);
+      pinchDist = d;
+    }
+  }, { passive:true });
+
+  document.getElementById('zoom-in').addEventListener('click', ()=>{ camDist = THREE.MathUtils.clamp(camDist-3,8,34); });
+  document.getElementById('zoom-out').addEventListener('click', ()=>{ camDist = THREE.MathUtils.clamp(camDist+3,8,34); });
+  document.getElementById('reset-view').addEventListener('click', ()=>{ camAzimuth=0.6; camElevation=0.45; camDist=isSmall?22:18; autoRotate=!reducedMotion; });
+
+  // ---- Raycasting / click ----
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  let downPos = null;
+
+  function pointerToNDC(e){
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = ((e.clientX-rect.left)/rect.width)*2-1;
+    pointer.y = -((e.clientY-rect.top)/rect.height)*2+1;
+  }
+  canvas.addEventListener('pointerdown', e=>{ downPos = {x:e.clientX,y:e.clientY}; });
+  canvas.addEventListener('pointerup', e=>{
+    if(!downPos) return;
+    const moved = Math.hypot(e.clientX-downPos.x, e.clientY-downPos.y);
+    if(moved > 6) return; // was a drag, not a click
+    pointerToNDC(e);
+    raycaster.setFromCamera(pointer, camera);
+    const meshes = nodeMeshes.map(n=>n.mesh);
+    const hits = raycaster.intersectObjects(meshes);
+    if(hits.length){
+      const hitMesh = hits[0].object;
+      const node = nodeMeshes.find(n=>n.mesh===hitMesh);
+      if(node && node.data){
+        openPanel(node.data);
+        pulseNode(node);
+      } else if(node && node.isHub){
+        // focus camera toward hub direction
+        const dir = hitMesh.position.clone().normalize();
+        camAzimuth = Math.atan2(dir.x, dir.z);
+      }
+    }
+  });
+
+  function pulseNode(node){
+    const start = performance.now();
+    const baseScale = node.baseScale;
+    function anim(){
+      const t = (performance.now()-start)/380;
+      if(t>1){ node.mesh.scale.setScalar(baseScale); return; }
+      const s = baseScale + Math.sin(t*Math.PI)*0.35;
+      node.mesh.scale.setScalar(s);
+      requestAnimationFrame(anim);
+    }
+    anim();
+  }
+
+  // ---- Resize ----
+  function onResize(){
+    const w = wrap.clientWidth, h = wrap.clientHeight;
+    camera.aspect = w/h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w,h);
+  }
+  window.addEventListener('resize', onResize);
+
+  // ---- Render loop ----
+  let t0 = performance.now();
+  function tick(now){
+    const dt = (now-t0)/1000; t0 = now;
+    if(autoRotate) camAzimuth += dt*0.06;
+    updateCamera();
+    coreMesh.rotation.y += dt*0.15;
+    coreMesh.rotation.x += dt*0.06;
+
+    // subtle hub bob
+    const time = now*0.001;
+    Object.values(hubMeshes).forEach((m,i)=>{ m.position.y = Math.sin(time*0.8+i)*0.15; m.rotation.y += dt*0.2; });
+
+    // gentle moon spin (rotation only — positions untouched)
+    nodeMeshes.forEach(n=>{ if(!n.isHub && n.mesh!==coreMesh) n.mesh.rotation.y += dt*0.3; });
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Reveal hint fade after first interaction handled via CSS opacity above.
+})();
+</script>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>
