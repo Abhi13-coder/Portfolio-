@@ -634,18 +634,23 @@ document.addEventListener('keydown', e=>{ if(e.key==='Escape') { closePanel(); c
    ============================================================ */
 function buildIndexCard(p){
   const st = STATUS[p.status];
-  const btn = document.createElement('button');
-  btn.className = 'index-card';
-  btn.innerHTML = `
+  const a = document.createElement('a');
+  a.className = 'index-card';
+  a.href = p.evidence[0].url;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.style.display = 'block';
+  a.style.textDecoration = 'none';
+  a.innerHTML = `
     <div class="row1">
       <h4>${p.label}</h4>
       <span class="status-dot" style="background:${st.color}"></span>
     </div>
     <p>${p.what.slice(0,110)}${p.what.length>110?'…':''}</p>
   `;
-  btn.addEventListener('click', ()=>openPanel(p));
-  return btn;
-}
+  a.addEventListener('click', (e)=>{ e.preventDefault(); openPanel(p); });
+  return a;
+ }
 const projectIndex = document.getElementById('project-index');
 projectIndex.innerHTML = '';
 PROJECTS.forEach(p=>projectIndex.appendChild(buildIndexCard(p)));
